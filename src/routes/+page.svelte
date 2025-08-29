@@ -12,12 +12,18 @@
 				riveInstance.stateMachineNames.forEach((stateMachine) => {
 					riveInstance.play(stateMachine);
 				});
+				window.addEventListener('resize', () => {
+					riveInstance.resizeDrawingSurfaceToCanvas();
+				});
 			}
 		});
 	});
 </script>
 
-<div class="flex h-screen w-full flex-col items-center justify-center">
+<div
+	style="background-color: #1C1E20;"
+	class="flex h-screen w-full flex-col items-center justify-center"
+>
 	<canvas
 		bind:this={canvas}
 		class="h-full max-h-[1024px] w-full max-w-[1440px]"
